@@ -1,7 +1,11 @@
 import './App.css'
 import Cards from './components/Cards.jsx'
 import Nav from "./components/Nav";
+import About from './components/About';
+import Detail from './components/Detail';
 import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Error404 from './components/Error404';
 
 function App () {
   const [characters, setCharacters] = useState([]);
@@ -27,12 +31,12 @@ function App () {
   return (
     <div className='App' style={{ padding: '25px' }}>
       <Nav onSearch={onSearch} />
-      <div>
-        <Cards
-          onClose={onClose}
-          characters={characters}
-        />
-      </div>
+      <Routes>
+        <Route exact path='home' element={<Cards onClose={onClose} characters={characters} />} />
+        <Route exact path='about' element={<About/>} />
+        <Route exact path='detail/:detailId' element={<Detail/>} />
+        <Route path='*' element={<Error404/>} />
+      </Routes>
     </div>
   )
 }

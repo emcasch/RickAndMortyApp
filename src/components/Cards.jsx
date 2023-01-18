@@ -12,6 +12,7 @@ function Cards({ characters, onClose }) { // [{...}, {...}, {...}]
                species={species}
                gender={gender}
                image={image}
+               id={id}
                onClose={() => onClose(id)}
               />
             })
