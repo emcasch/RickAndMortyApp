@@ -28,10 +28,10 @@ const Detail = () => {
                 <Link to='/home' >Volver</Link>
             </button>
             <h1>{character?.name}</h1>
-            <p>{character?.status}</p>
-            <p>{character?.species}</p>
-            <p>{character?.gender}</p>
-            <p>{character?.origin?.name}</p>
+            <p><strong>Estado: </strong>{character?.status}</p>
+            <p><strong>Especie: </strong>{character?.species}</p>
+            <p><strong>Género: </strong>{character?.gender}</p>
+            <p><strong>Origen: </strong>{character?.origin?.name}</p>
             <img src={character?.image} alt={character.name} />
         </div>
     )
