@@ -8,7 +8,7 @@ function SearchBar({ onSearch }) {
    }
 
    let randomNumber = Math.ceil(Math.random() * 826)
-
+   
    return (
       <div>
          <input type='search' value={character} onChange={handleChange} />
