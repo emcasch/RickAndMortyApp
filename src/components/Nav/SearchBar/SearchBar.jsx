@@ -12,8 +12,8 @@ function SearchBar({ onSearch }) {
    return (
       <div>
          <input type='search' value={character} onChange={handleChange} />
-         <button onClick={() => onSearch(character)}>Agregar</button>
-         <button onClick={() => onSearch(randomNumber)}>Random</button>
+         <button className='btn btn-warning mx-1' onClick={() => onSearch(character)}>Add</button>
+         <button className='btn btn-warning' onClick={() => onSearch(randomNumber)}>Random</button>
       </div>
    );
 }

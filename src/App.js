@@ -1,4 +1,5 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -38,7 +39,7 @@ function App ({ deleteFavCharacter }) {
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
          } else {
-            window.alert('No hay personajes con ese ID');
+            window.alert('There are not characters with that ID');
          }
       })
   }
@@ -51,7 +52,7 @@ function App ({ deleteFavCharacter }) {
   }
 
   return (
-    <div className='App' style={{ padding: '25px' }}>
+    <div className='App'>
       { location !== "/" && <Nav onSearch={onSearch} /> }
       <Routes>
         <Route exact path='/' element={<Form login={login} />} />
